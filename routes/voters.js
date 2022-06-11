@@ -5,7 +5,7 @@ const voters = require('../DB/voters');
 
 router.get('/', (req, res) => res.send("works"));
 
-router.get('/verifyme/:vin', (req, res) => {
+router.get('/verifyme/:vin', (req, res) => {''
     let voter = voters.find(el => el.vin == req.params.vin);
     
     if(!voter){

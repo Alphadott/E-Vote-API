@@ -6,23 +6,41 @@ const url = "mongodb+srv://alphadot:alphadot@cluster0.29phplk.mongodb.net/?retry
 const connectionParams  =   {   useNewUrlParser: true,  useUnifiedTopology: true }
 
 
-const userSchema = new User({ 
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
-    firstname : { 
-                    type : String, max : 15, lowercase  : true, trim  : true, required : [true, 'Firstname is required'] 
-                },
-    surname   : { 
-                    type : String, max : 15, lowercase  : true, trim  : true, required : [true, 'Surname is required'] 
-                },
-    email     : { 
-                    type : String, max : 30, lowercase  : true, trim  : true, required : [true, 'Email is required'],
-                     unique : true
-                },
-    password : { 
-                    type : String, max : 15, lowercase  : true, trim  : true, required : [true, 'Password is required'] 
-                },
-    entry     : { type : Date, default : Date.now }
-
+// Voter
+var VoterSchema = new Schema({
+    role: {
+        type: [{
+            type: String
+        }],
+        default: 'field is required'
+    },
+    firstname: {
+        type: String,
+        required: 'field is required'
+    },
+    lastname: {
+        type: String,
+        required: 'field is required'
+    },
+    email: {
+        type: String,
+        required: 'email is required!'
+    },
+    password: {
+        type: String,
+        required: 'password is required!',
+        select: false
+    },
+    photo: {
+        type: String,
+    },
+    created_at: {
+        type: Date,
+        default: Date.now
+    }
 });
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('Voters', VoterSchema);
