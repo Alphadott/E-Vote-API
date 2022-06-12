@@ -7,7 +7,8 @@ const ElectionSchema = new Schema({
     description: { type: String, required: true },
     startAt: { type: Date, required: true },
     endAt: { type: Date },
-    candidates: [{ type: Schema.Types.ObjectId, ref: 'Candidate' }]
+    candidates: [{ type: Schema.Types.ObjectId, ref: 'Candidate' }],
+    pollingUnits: [{ type: Schema.Types.ObjectId, ref: 'PollingUnit' }]
 });
 
 
