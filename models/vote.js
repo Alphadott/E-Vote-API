@@ -1,6 +1,6 @@
 const mongoose    =   require('mongoose');
 mongoose.Promise  =   global.Promise;
-const Voter        =   mongoose.Schema;
+const Vote        =   mongoose.Schema;
 
 const url = "mongodb+srv://alphadot:alphadot@cluster0.29phplk.mongodb.net/?retryWrites=true&w=majority";
 const connectionParams  =   {   useNewUrlParser: true,  useUnifiedTopology: true }
@@ -14,64 +14,29 @@ mongoose.connect(url,   connectionParams)
         }
     )
 
-// Voter Schema
-const VoterSchema = new Voter({
-	voterFor: {
+// Vote Schema
+const VoteSchema = new Vote({
+	voteFor: {
 		type: String,
 		required: true
 	},
-	firstName: {
-		type: String,
-		required: true,
-	},
-	lastName: {
-		type: String,
-		required: true,
-	},
-	middleName: {
-		type: String
-	},
-	gender: {
-		type: String,
-		required: true,
-	},
-	DoB: {
-		type: String,
-		required
-	},
-	imageURL: {
-		type: String,
-		required: true,
-	},
-	imageCode: {
-		type: String,
-		required: true,
-	},
-	fingPrintURL: {
-		type: String,
-		required: true,
-	},
-	fingPrintCode: {
-		type: String,
-		required: true,
-	},
-	VIN: {
+	vin: {
 		type: Number,
-		required
+		required: true,
 	},
 	pollingUnit: {
 		type: String,
-		required
+		required: true,
 	},
-	isVerified: {
-		type: Boolean,
-		default: false
+	votedParty: {
+		type: String,
+		required: true,
 	},
-	lastVerifiedAt: {
+	votedAt: {
 		type: String,
 		required
 	}
 })
 
 
-module.exports = mongoose.model('Voter', VoterSchema);
+module.exports = mongoose.model('Vote', VoteSchema);
