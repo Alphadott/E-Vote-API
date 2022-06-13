@@ -1,23 +1,25 @@
 {
-  "name": "alphadot-evote-backend",
-  "version": "1.0.0",
-  "description": "Alphadot-Evote-Backend",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "Samson Okeji",
-  "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.20.0",
-    "cookie-parser": "^1.4.6",
-    "cors": "^2.8.5",
-    "express": "^4.18.1",
-    "express-session": "^1.17.3",
-    "mongodb": "^4.7.0",
-    "mongoose": "^6.3.6",
-    "path": "^0.12.7",
-    "session": "^0.1.0"
-  }
+    "name": "alphadot-evote-backend",
+    "version": "1.0.0",
+    "description": "Alphadot-Evote-Backend",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js",
+        "devstart": "nodemon server.js",
+        "serverstart": "DEBUG=express-locallibrary-tutorial:* npm run dev start"
+    },
+    "keywords": [],
+    "author": "Samson Okeji",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.20.0",
+        "cookie-parser": "^1.4.6",
+        "cors": "^2.8.5",
+        "express": "^4.18.1",
+        "express-session": "^1.17.3",
+        "mongodb": "^4.7.0",
+        "mongoose": "^6.3.6",
+        "path": "^0.12.7",
+        "session": "^0.1.0"
+    }
 }

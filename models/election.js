@@ -3,12 +3,13 @@ const Schema = mongoose.Schema;
 
 // Election Schema
 const ElectionSchema = new Schema({
-    title: { type: String, required: true },
+    election: { type: String, required: true },
     description: { type: String, required: true },
     startAt: { type: Date, required: true },
     endAt: { type: Date },
     candidates: [{ type: Schema.Types.ObjectId, ref: 'Candidate' }],
-    pollingUnits: [{ type: Schema.Types.ObjectId, ref: 'PollingUnit' }]
+    pollingUnits: [{ type: String }],
+    votes: [{ type: Schema.Types.ObjectId, ref: 'Vote' }]
 });
 
 

@@ -16,8 +16,8 @@ const app = express();
 
 // Set up mongoose connection
 var mongoose = require('mongoose');
-// var mongoDB = 'mongodb+srv://locallibrary:locallibrary@cluster0.rbubb.mongodb.net/?retryWrites=true&w=majority';
-var mongoDB = 'mongodb+srv://evoting:evoting@cluster0.ffsk5.mongodb.net/?retryWrites=true&w=majority';
+// var mongoDB = 'mongodb+srv://evoting:evoting@cluster0.ffsk5.mongodb.net/?retryWrites=true&w=majority';
+var mongoDB = 'mongodb://evoting:evoting@cluster0-shard-00-00.ffsk5.mongodb.net:27017,cluster0-shard-00-01.ffsk5.mongodb.net:27017,cluster0-shard-00-02.ffsk5.mongodb.net:27017/?ssl=true&replicaSet=atlas-mj3ae3-shard-0&authSource=admin&retryWrites=true&w=majority';
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));

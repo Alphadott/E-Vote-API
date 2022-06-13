@@ -3,10 +3,17 @@ const router = express.Router();
 
 const electionController = require('../controllers/electionController');
 
+// Get all elections
+router.get('/', electionController.list_elections_get);
+
 // Get active elections
-router.get('/elections/:vin', (req, res) => {
-    // get elections happening in current voter polling unit
-});
+router.get('/active/:vin', electionController.active_elections_get);
+
+// Get election detail
+router.get('/:election', electionController.election_details_get);
+
+// Register new elections
+router.post('/', electionController.register_election_post);
 
 
-exports.module = router;
+module.exports = router;

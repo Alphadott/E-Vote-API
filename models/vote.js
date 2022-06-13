@@ -8,7 +8,7 @@ const VoteSchema = new Schema({
     candidate: { type: Schema.Types.ObjectId, ref: 'Candidate', required: true },
     votedAt: { type: Date, default: Date.now(), required: true },
     pollingUnit: { type: String, required: true, required: true },
-})
+}, { timestmaps: true });
 
 
 module.exports = mongoose.model('Vote', VoteSchema);

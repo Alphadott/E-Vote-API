@@ -13,7 +13,7 @@ const VoterSchema = new Schema({
     fingPrintURL: { type: String },
     fingPrintCode: { type: String },
     vin: { type: Number, required: true },
-    pollingUnit: { type: Schema.Types.ObjectId, ref: 'PollingUnit', required: true },
+    pollingUnit: { type: String, required: true },
     isVerified: { type: Boolean, default: false },
     lastVerifiedAt: { type: Date },
     votes: [{ type: Schema.Types.ObjectId, ref: 'Vote' }]
