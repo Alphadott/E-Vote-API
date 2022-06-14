@@ -8,6 +8,7 @@
         "devstart": "nodemon server.js",
         "serverstart": "DEBUG=express-locallibrary-tutorial:* npm run dev start"
     },
+    "engines": { "node": "16.14.2" },
     "keywords": [],
     "author": "Samson Okeji",
     "license": "ISC",
