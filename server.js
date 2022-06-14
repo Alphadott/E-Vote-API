@@ -30,11 +30,11 @@ app.use(cors({ origin: '*' }));
 
 app.get('/', (req, res) => res.send('<h1>Welcome to E-VOTE API</h1>'));
 
-app.use('/voter', voterRoutes);
-app.use('/vote', voteRoutes);
-app.use('/election', electionRoutes);
-app.use('/candidate', candidateRoutes);
-app.use('/polling-unit', pollingUnitRoutes);
+app.use('/api/voter', voterRoutes);
+app.use('/api/vote', voteRoutes);
+app.use('/api/election', electionRoutes);
+app.use('/api/candidate', candidateRoutes);
+app.use('/api/polling-unit', pollingUnitRoutes);
 
 
 const port = process.env.PORT || 5000;
