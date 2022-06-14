@@ -28,6 +28,8 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(cors({ origin: '*' }));
 
+app.get('/', (req, res) => res.send('<h1>Welcome to E-VOTE API</h1>'));
+
 app.use('/voter', voterRoutes);
 app.use('/vote', voteRoutes);
 app.use('/election', electionRoutes);
