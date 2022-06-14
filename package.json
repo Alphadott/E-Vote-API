@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "description": "Alphadot-Evote-Backend",
     "main": "server.js",
+    "private": true,
     "scripts": {
         "start": "node server.js",
         "devstart": "nodemon server.js",

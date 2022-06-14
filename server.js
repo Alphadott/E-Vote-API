@@ -35,7 +35,7 @@ app.use('/candidate', candidateRoutes);
 app.use('/polling-unit', pollingUnitRoutes);
 
 
-port = process.env.port || 5000;
+const port = process.env.PORT || 5000;
 app.listen(port, function() {
     console.log("Listening to requests on port " + port);
 
